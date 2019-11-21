@@ -1,0 +1,20 @@
+# Introduction
+
+* What is the subject of the study? Describe the economic/econometric problem.
+
+* What is the purpose of the study (working hypothesis)?
+
+* What do we already know about the subject (literature review)? Use citations:
+  @lingenfelser2011systematic shows that... Alternative Forms of the Wald test are
+  considered [@kuncheva2004combining].
+  
+* What is the innovation of the study?
+
+* Provide an overview of your results.
+
+* Outline of the paper:\
+  _The paper is organized as follows. The next section describes the model
+  under investigation. Section "[Data]" describes the data set
+  and Section "[Results]" presents the results. Finally, Section
+  "[Conclusion]" concludes._
+* The introduction should not be longer than 4 pages.

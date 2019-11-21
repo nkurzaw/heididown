@@ -1,0 +1,7 @@
+# Abstract {-}
+
+This is the template for a thesis at the Faculty of Biosciences at 
+Heidelberg University. A popular approach to write a thesis or a
+paper is the IMRAD method (Introduction, Methods, Results and Discussion). This
+approach is not mandatory! You can find more information about formal
+requirements [here](https://www.bio.uni-heidelberg.de/fakultaetbio/en/phd_submission).

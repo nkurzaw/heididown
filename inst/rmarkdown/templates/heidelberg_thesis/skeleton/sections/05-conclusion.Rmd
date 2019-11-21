@@ -1,0 +1,14 @@
+# Conclusion
+
+* Give a short summary of what has been done and what has been found.
+
+* Expose results concisely.
+
+* Draw conclusions about the problem studied. What are the implications of your
+  findings?
+
+* Point out some limitations of study (assist reader in judging validity of
+  findings).
+
+* Suggest issues for future research.
+

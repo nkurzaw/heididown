@@ -1,0 +1,100 @@
+---
+#
+# Required Information --------------------------------------------------------
+# change lines 5 - 15
+title: "Thesis Title"
+type: "Dissertation / Bachelor's / Master's Thesis"
+author: "Your Name Here"
+authordegree: "M. Sc."
+birthplace: "Somewhere"
+date: "MMMM dd, yyyy"
+examdate: "MMMM dd, yyyy"
+university: "Ruperto Carola University Heidelberg"
+institute: "Institute of interesting Science"
+instituteshort: "(IIS)"
+department: "Division of Fun Science"
+supervisor: "Dr. Supervisor"
+referee1: "Prof. Dr. Ref Eree the 1st"
+referee2: "Prof. Dr. Ref Eree the 2nd" 
+dedication: "To my pet Fred"
+#
+# Optional Information --------------------------------------------------------
+# comment out if unnecessary
+abstract: |  
+  `r if(knitr:::is_latex_output()) paste(readLines("prelim/00-abstract.Rmd"), collapse = '\n  ')`
+zusammenfassung: |
+  `r if(knitr:::is_latex_output()) paste(readLines("prelim/00-zusammenfassung.Rmd"), collapse = '\n  ')`
+list-of-publications: |  
+  `r if(knitr:::is_latex_output()) paste(readLines("prelim/00-list-of-publications.Rmd"), collapse = '\n  ')`
+acknowledge: |  
+  `r if(knitr:::is_latex_output()) paste(readLines("prelim/00-acknowledge.Rmd"), collapse = '\n  ')`
+abbreviations: |  
+  `r if(knitr:::is_latex_output()) paste(readLines("prelim/00-abbreviations.Rmd"), collapse = '\n  ')`
+lot: true                              # list of tables
+lof: true                              # list of figures
+link-citations: true
+bibliography: bib/references.bib       # bibliography file
+#
+# Rendering Options -----------------------------------------------------------
+#
+knit: "bookdown::render_book"
+output: 
+  heididown::thesis_pdf  
+space_between_paragraphs: true       # if you want spaces bt paragraph
+# header-includes:     # if including additional latex packages or commands
+  # - \setlength{\parindent}{17pt}
+---
+
+<!--
+Above is the YAML (YAML Ain't Markup Language) header that includes a lot of
+metadata used to produce the document.  Be careful with spacing in this header!
+If you'd like to include a comment that won't be produced in your resulting file
+enclose it in a block like this.
+-->
+
+<!--
+If you receive a duplicate label error after knitting, make sure to delete the
+index.Rmd file and then knit again.
+-->
+
+```{r include_packages, include = FALSE}
+# This chunk ensures that the `huwiwidown` package is installed and loaded. This
+# package includes the template files for the thesis.
+if (!require(devtools)) {
+  install.packages("devtools", repos = "http://cran.rstudio.com")
+}
+if (!require(heididown)) {
+  devtools::install_github("nkurzaw/heididown")
+  library(heididown)
+}
+```
+
+<!-- 
+The {.unnumbered} option here means that the introduction will be "Section  0."
+You can also use {-} for no numbers on section. 
+-->
+
+<!--
+The body of the thesis starts underneath the text below. Feel free to delete
+everything below this.
+-->
+
+# About this Thesis Template {-}
+
+Welcome to the thesis template. This template is based on the famous two mandatory  
+pages the Faculty of Biosciences at Heidelberg University requires for dissertations.
+It was adapted from [ismayc/thesisdown](https://github.com/ismayc/thesisdown) that 
+in turn is based on 
+[phister/huwiwidown](https://github.com/phister/huwiwidown)
+
+## Why use R Markdown? {-}
+
+_R Markdown_ creates a simple and straightforward way to interface with the
+beauty of LaTeX. Packages have been written in **R** to work directly with LaTeX
+to produce nicely formatting tables and paragraphs. 
+
+_R Markdown_ also allows you to read in your data, to analyze it and to
+visualize it using **R** functions, and also to provide the documentation and
+commentary on the results of your project. Using _R Markdown_ will also allow
+you to easily keep track of your analyses in **R** chunks of code, with the 
+resulting plots and output included as well.

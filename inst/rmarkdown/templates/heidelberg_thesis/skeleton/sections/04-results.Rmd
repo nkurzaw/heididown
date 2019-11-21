@@ -1,0 +1,53 @@
+# Results
+
+* Organize material and present results.
+
+* Use tables, figures (but prefer visual presentation):
+
+  + Tables and figures should supplement (and not duplicate) the text.
+
+  + Tables and figures should be provided with legends.
+
+  + _Figure \@ref(fig:graph) shows how to include and reference graphics.
+    The graphic must be labelled before. Files must be in __.eps__ format. You
+    can do this really easily in R Markdown with `knitr::include_graphics()`_!
+
+  + Figures can be referenced with `\@ref(fig:<name>)`, where `<name>` is the
+    name of the code chunk.
+
+```{r graph, echo=FALSE, fig.cap="Estimated residuals from model XXX. ...", out.width = "50%"}
+knitr::include_graphics("figures/graph.eps")
+```
+  + Tables and graphics may appear in the text or in the appendix, especially if
+  there are many simulation results tabulated, but is also depends on the study
+  and number of tables resp. figures. The key graphs and tables must appear in
+  the text!
+
+* R Markdown can also supports math equations just like _LaTeX_!
+
+  + _Equation \@ref(eq:SpecDens) represents the ACs of a stationary
+    stochastic process:_
+    \begin{equation}
+            f_y(\lambda) = (2\pi)^{-1} \sum_{j=-\infty}^{\infty}
+                           \gamma_j e^{-i\lambda j}
+                         =(2\pi)^{-1}\left(\gamma_0 + 2 \sum_{j=1}^{\infty}
+        \gamma_j \cos(\lambda j)\right)
+                                       (\#eq:SpecDens)
+    \end{equation}
+    _where $i=\sqrt{-1}$ is the imaginary unit, $\lambda \in [-\pi, \pi]$ is the
+    frequency and the $\gamma_j$ are the autocovariances of $y_t$._
+
+  + Equations can be referenced with `\@ref(eq:<name>)`, where name is defined
+    by adding `(\#eq:<name>)` in the line immediately before `\end{equation}`.
+
+## Review of Results
+
+*  Do the results support or do they contradict economic theory ?
+
+*  What does the reader learn from the results?
+
+*  Try to give an intuition for your results.
+
+*  Provide robustness checks.
+
+*  Compare to previous research.

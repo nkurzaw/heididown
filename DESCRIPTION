@@ -1,0 +1,22 @@
+Package: heididown
+Title: Heidelberg University thesis template for rmarkdown
+Version: 0.1.0
+Author: Nils Kurzawa
+Maintainer: Nils Kurzawa <nils.kurzawa@embl.de>
+Description: rmarkdown thesis template for students at the faculty of biosciences
+    at Heidelberg University using the `bookdown` package.
+Depends: 
+    R (>= 3.5.1),
+    devtools,
+    dplyr,
+    ggplot2,
+    bookdown,
+    rmarkdown,
+    knitr,
+    kableExtra,
+    bibtex
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+SystemRequirements: pandoc (>= 1.18) - http://pandoc.org
+RoxygenNote: 6.1.1

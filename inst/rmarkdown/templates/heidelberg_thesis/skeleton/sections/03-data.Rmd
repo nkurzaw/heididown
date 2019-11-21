@@ -1,0 +1,79 @@
+# Data
+
+* Describe the data and its quality.
+
+* How was the data sample selected?
+
+* Provide descriptive statistics such as:
+
+  * time period,
+
+  * item number of observations, data frequency,
+
+  * item mean, median,
+
+  * item min, max, standard deviation,
+
+  * item skewness, kurtosis, Jarque--Bera statistic,
+
+  * item time series plots, histogram.
+
+* For example:
+
+```{r table1, echo=FALSE}
+col_names <- c(
+  "3m", "6m", "1yr", "2yr", "3yr", "5yr", "7yr", "10yr", "12yr", "15yr"
+)
+means     <- c(
+  3.138, 3.191, 3.307, 3.544, 3.756, 4.093, 4.354, 4.621, 4.741, 4.878
+)
+stddev    <- c(
+  0.915, 0.919, 0.935, 0.910, 0.876, 0.825, 0.803, 0.776, 0.768, 0.762
+)
+row_names <- c("Mean", "StD")
+
+df <- matrix(data = c(means, stddev), nrow = 2, byrow = T)
+rownames(df) <- row_names
+colnames(df) <- col_names
+df <- data.frame(df)
+knitr::kable(
+  df,
+  booktabs = TRUE,
+  caption = "Detailed descriptive statistics of location and dispersion for 2100 observed swap rates for the period from February 15, 1999 to March 2, 2007. Swap rates measured as 3.12 (instead of 0.0312).",
+  col.names = col_names, 
+  escape = FALSE
+) %>%
+kable_styling(latex_options = c("HOLD_position")) %>%
+row_spec(2, hline_after = T)
+```
+
+* Allows the reader to judge whether the sample is biased or to evaluate 
+  possible impacts of outliers, for example.
+
+* Here tables can be easily integrated using the `kable()` function in the
+  `knitr` package (with perhaps some additional help from the `kableExtra`
+  package). `kable()` will automatically generate a label for the table
+  environment. That way you don't have to manually enter in the table in LaTex,
+  you can embed tables from R code. 
+
+* Tables can be referenced using `\@ref(label)`, where `label` is `tab:<name>`,
+  where `<name>` is the code chunk label.
+
+* The appearance may look different to tables directly typed with LaTex, due to
+  limitations in `kable()`. To compare:
+    \begin{table}[ht]
+
+    \begin{center}
+        {\footnotesize
+        \begin{tabular}{l|cccccccccc}
+            \hline \hline
+                      & 3m    & 6m    & 1yr   & 2yr   & 3yr   & 5yr   & 7yr   & 10yr  & 12yr  & 15yr   \\
+            \hline
+                Mean   & 3.138 & 3.191 & 3.307 & 3.544 & 3.756 & 4.093 & 4.354 & 4.621 & 4.741 & 4.878  \\
+                StD    & 0.915 & 0.919 & 0.935 & 0.910 & 0.876 & 0.825 & 0.803 & 0.776 & 0.768 & 0.762  \\
+            \hline \hline
+        \end{tabular}}
+    \end{center}
+    \caption{This table was handwritten with LaTeX.}
+    \label{tab:table2}
+    \end{table}
