@@ -51,7 +51,7 @@ if (!require("devtools")) {
   install.packages("devtools", repos = "http://cran.rstudio.org")
 }
 devtools::install_github("rstudio/bookdown")
-devtools::install_github("nkurzaw/heidiidown")
+devtools::install_github("nkurzaw/heididown")
 ```
 3. Create a New R Markdown document:
 
