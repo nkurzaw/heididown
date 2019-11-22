@@ -1,4 +1,4 @@
-# Appendix {-}
+# (APPENDIX) Appendix {-}
 
 Here goes the appendix!
 
