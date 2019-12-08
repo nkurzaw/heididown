@@ -1,10 +1,5 @@
-% This is a Heidelberg University LaTeX template, optimized for R Markdown.
-
-% -------------------------------
-% --- PREAMBLE ---
-% -------------------------------
-\documentclass[a4paper,11pt]{article}
-
+\documentclass[11pt, a4paper, twosided]{book}
+\usepackage[hmarginratio=1:1]{geometry} % equal right and left raitios
 \usepackage{amsmath,amssymb,amsfonts,amsthm}    % Typical maths resource packages
 \usepackage{graphicx}                           % Packages to allow inclusion of graphics
 \usepackage[authoryear]{natbib}                 % literature reference style
@@ -15,40 +10,11 @@
 % \usepackage[colorlinks=true]{hyperref}
 % \usepackage[bottom]{footmisc}
 \usepackage[bottom, flushmargin]{footmisc}                   % For footnotes
-\usepackage[citebordercolor={0 1 0}]{hyperref}                           % For creating hyperlinks in cross references
+\usepackage[citebordercolor={0 1 0}]{hyperref}  % For creating hyperlinks in cross references
 \usepackage{footnotebackref}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-
-% -------------------------------
-% --- some layout definitions ---
-% -------------------------------
-
-% define topline
-\usepackage[automark]{scrlayer-scrpage}
-\pagestyle{scrheadings}
-\automark{section}
-\clearscrheadings
-\ohead{\headmark}
-
-% define citation style
-\bibliographystyle{ecta}
-
-% define page size, margin size
-\setlength{\headheight}{1.1\baselineskip}
-\voffset=-2cm
-\hoffset=-3cm
-\textheight24cm
-\textwidth15.5cm
-\topmargin1cm
-\oddsidemargin3cm
-\evensidemargin3cm
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
-$if(space_between_paragraphs)$
-  \usepackage[parfill]{parskip}
-$endif$
-
+%--------------------------------------------
 % define line spacing = 1.5
 \renewcommand{\baselinestretch}{1.5}
 
@@ -63,56 +29,64 @@ $endif$
 \newcommand{\thesisauthor}{$author$}
 \newcommand{\thesisdate}{$date$}
 
-% define tightlist to work with newer versions of pandoc
+% Added by CII (Thanks, Hadley!)
+% Use ref for internal links
+\renewcommand{\hyperref}[2][???]{\autoref{#1}}
+\def\chapterautorefname{Chapter}
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Subsection}
+% End of CII addition
+
+% Added by CII
+\usepackage{caption}
+\captionsetup{width=5in}
+% End of CII addition
+
+% Added by CII
+%%% Copied from knitr
+%% maxwidth is the original width if it's less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\renewcommand{\contentsname}{Table of Contents}
+% End of CII addition
+
+\setlength{\parskip}{0pt}
+
+% Added by CII
+$if(space_between_paragraphs)$
+  %\setlength{\parskip}{\baselineskip}
+  \usepackage[parfill]{parskip}
+$endif$
+
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-% change spacing
-\setlength {\parskip}{1em}
-
-% Additional LaTeX parameters added in the YAML header of index.Rmd
 $for(header-includes)$
-  $header-includes$
+	$header-includes$
 $endfor$
-
-$if(list-of-publications)$
-\usepackage{bibentry}
-$endif$
-% --------------------------------------
-% --------------------------------------
-% --------------------------------------
-% --- the structure the tex document ---
-% ---  (this our recommendation) -------
-% frontmatter:
-%   - titlepage (mandatory),
-%   - acknowledgement,
-%   - abstract,
-%   - table of contents (mandatory),
-%   - list of abbreviations (not mandatory),
-%   - list of figures (not mandatory),
-%   - list of tables  (not mandatory) .
+% End of CII addition
+%%
+%% End Preamble
+%%
 %
-% body of the thesis (the structure of the thesis body is not mandatory, but the list of literature is mandatory):
-%   - introduction,
-%   - methods,
-%   - data,
-%   - results,
-%   - conclusion,
-%   - literature (mandatory),
-%   - appendix (figures, tables).
-%
-% last page:
-%   - declaration of authorship (mandatory).
-% --------------------------------------
-% --------------------------------------
-% --------------------------------------
 
 \begin{document}
-% -------------------------------
-% --- frontmatter: Title page ---
-% -------------------------------
+
+% ------------------------------------
+% ---- frontmatter: First Page -------
+% ------------------------------------
+
 \thispagestyle{empty}
-\begin{center}
+  \begin{center}
   {\Large{Dissertation\\
     submitted to the\\
     Combined Faculty of Natural Sciences and Mathematics\\
@@ -154,72 +128,78 @@ Referees: & $referee1$ \\
 \hypertarget{declaration-of-authorship}{%
 \section*{Declaration of Authorship}\label{declaration-of-authorship}}
 
-I hereby confirm that I have authored this \thesistype{} independently and
+I hereby confirm that I have authored this Dissertation independently and
 without the use of others sources than the ones indicated. I have not yet
 presented this thesis or parts thereof to a university as part of an
 examination or degree. This work was carried out in the $department$ at
 the $institute$ $instituteshort$ in the group of $supervisor$.
 \vspace{1cm}
 
-Heidelberg, \thesisdate{}
+\noindent Heidelberg, \thesisdate{}
 \vspace{3cm}
 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+\noindent . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 \vspace{0.1cm}
 
-\thesisauthor{}
+\noindent \thesisauthor{}
 \newpage
+\thispagestyle{empty}
 \vspace*{\fill}
-$author$, \textit{$title$}, \textcopyright\,\thesisdate{}
+$author$, \textit{$title$}, \textcopyright\, \thesisdate{}
 \newpage
+
+%\frontmatter % this stuff will be roman-numbered
+\pagestyle{empty} % this removes page numbers from the frontmatter
 
 % --------------------------------------------
 % --------------- Dedication -----------------
 % --------------------------------------------
 $if(dedication)$
-\null
-\vspace{5cm}
+\vspace*{\fill}
 \begin{center}
 \textit{$dedication$}
 \end{center}
+\vspace*{\fill}
 \newpage\null\thispagestyle{empty}\newpage
 $endif$
 
 % ------------------------------------
 % --- frontmatter: Acknowledgement ---
 % ------------------------------------
-
+\pagestyle{plain}
+\pagenumbering{roman}   %  define page number in roman style
+\setcounter{page}{1}    % start page numbering anew
 $if(acknowledge)$
 \newpage
 $acknowledge$
-$endif$
-\pagestyle{plain}
-\pagenumbering{roman}   % define page number in roman style
-\setcounter{page}{1}    % start page numbering
 \newpage\null\thispagestyle{empty}\newpage
+$endif$
+
 
 % --------------------------------------------
 % ---------- List of publications ------------
 % --------------------------------------------
-
 $if(list-of-publications)$
-$list-of-publications$
-\newpage\null\thispagestyle{empty}\newpage
+    $list-of-publications$
+\newpage\null\newpage
 $endif$
 
 % -------------------------------------
 % --- frontmatter: Zusammendfassung ---
 % -------------------------------------
-
-$zusammenfassung$
-\newpage\null\thispagestyle{empty}\newpage
+$if(zusammenfassung)$
+    $zusammenfassung$
+$endif$
+\newpage\null\newpage
 
 % -----------------------------
 % --- frontmatter: Abstract ---
 % -----------------------------
 
-$abstract$
-\newpage\null\thispagestyle{empty}\newpage
+$if(abstract)$
+    $abstract$
+$endif$
+\newpage\null\newpage
 
 % -----------------------------
 % --- frontmatter: Contents ---
@@ -254,9 +234,8 @@ $if(lot)$
 \addcontentsline{toc}{section}{List of Tables}
 $endif$
 
-% -------------------------------
-% --- main body of the thesis ---
-% -------------------------------
+
+%\mainmatter % here the regular arabic numbering starts
 \newpage
 \pagestyle{plain}
 \setcounter{page}{1}    % start page numbering anew
@@ -265,3 +244,4 @@ $endif$
 $body$
 
 \end{document}
+
