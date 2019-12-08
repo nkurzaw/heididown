@@ -1,0 +1,267 @@
+% This is a Heidelberg University LaTeX template, optimized for R Markdown.
+
+% -------------------------------
+% --- PREAMBLE ---
+% -------------------------------
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}    % Typical maths resource packages
+\usepackage{graphicx}                           % Packages to allow inclusion of graphics
+\usepackage[authoryear]{natbib}                 % literature reference style
+\usepackage[bf]{caption}
+\usepackage{textcomp}                           % For single quotes
+\usepackage{floatrow}                           % For image and table position
+\usepackage{booktabs}                           % For tables
+% \usepackage[colorlinks=true]{hyperref}
+% \usepackage[bottom]{footmisc}
+\usepackage[bottom, flushmargin]{footmisc}                   % For footnotes
+\usepackage[citebordercolor={0 1 0}]{hyperref}                           % For creating hyperlinks in cross references
+\usepackage{footnotebackref}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% -------------------------------
+% --- some layout definitions ---
+% -------------------------------
+
+% define topline
+\usepackage[automark]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\automark{section}
+\clearscrheadings
+\ohead{\headmark}
+
+% define citation style
+\bibliographystyle{ecta}
+
+% define page size, margin size
+\setlength{\headheight}{1.1\baselineskip}
+\voffset=-2cm
+\hoffset=-3cm
+\textheight24cm
+\textwidth15.5cm
+\topmargin1cm
+\oddsidemargin3cm
+\evensidemargin3cm
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+$if(space_between_paragraphs)$
+  \usepackage[parfill]{parskip}
+$endif$
+
+% define line spacing = 1.5
+\renewcommand{\baselinestretch}{1.5}
+
+% define position of graphics
+\floatsetup[figure]{capposition=bottom}
+\floatsetup[table]{capposition=bottom}
+\floatplacement{figure}{ht}
+\floatplacement{table}{ht}
+
+% save thesis parameters for later
+\newcommand{\thesistype}{$type$}
+\newcommand{\thesisauthor}{$author$}
+\newcommand{\thesisdate}{$date$}
+
+% define tightlist to work with newer versions of pandoc
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% change spacing
+\setlength {\parskip}{1em}
+
+% Additional LaTeX parameters added in the YAML header of index.Rmd
+$for(header-includes)$
+  $header-includes$
+$endfor$
+
+$if(list-of-publications)$
+\usepackage{bibentry}
+$endif$
+% --------------------------------------
+% --------------------------------------
+% --------------------------------------
+% --- the structure the tex document ---
+% ---  (this our recommendation) -------
+% frontmatter:
+%   - titlepage (mandatory),
+%   - acknowledgement,
+%   - abstract,
+%   - table of contents (mandatory),
+%   - list of abbreviations (not mandatory),
+%   - list of figures (not mandatory),
+%   - list of tables  (not mandatory) .
+%
+% body of the thesis (the structure of the thesis body is not mandatory, but the list of literature is mandatory):
+%   - introduction,
+%   - methods,
+%   - data,
+%   - results,
+%   - conclusion,
+%   - literature (mandatory),
+%   - appendix (figures, tables).
+%
+% last page:
+%   - declaration of authorship (mandatory).
+% --------------------------------------
+% --------------------------------------
+% --------------------------------------
+
+\begin{document}
+% -------------------------------
+% --- frontmatter: Title page ---
+% -------------------------------
+\thispagestyle{empty}
+\begin{center}
+  {\Large{Dissertation\\
+    submitted to the\\
+    Combined Faculty of Natural Sciences and Mathematics\\
+    of the Ruperto Carola University Heidelberg, Germany\\
+    for the degree of\\
+    Doctor of Natural Sciences\\}} \vspace*{\fill}
+
+  \Large{Presented by} \\\vspace{0.5cm}
+  \Large{$authordegree$ $author$} \\
+  \Large{born in $birthplace$} \\
+  \Large{Oral examination: $examdate$}
+
+\end{center}
+\newpage\null\thispagestyle{empty}\newpage
+
+% ------------------------------------
+% --- frontmatter: Secound Page ------
+% ------------------------------------
+
+\pagebreak
+\thispagestyle{empty}
+\null
+\begin{center}
+\Large{$title$} \\
+\vspace*{\fill}
+\begin{tabular}{ c c }
+Referees: & $referee1$ \\
+          & $referee2$
+\end{tabular}
+\end{center}
+\newpage\null\thispagestyle{empty}\newpage
+
+% --------------------------------------------
+% -------- Declaration of Authorship ---------
+% --------------------------------------------
+
+\newpage
+\thispagestyle{empty}
+\hypertarget{declaration-of-authorship}{%
+\section*{Declaration of Authorship}\label{declaration-of-authorship}}
+
+I hereby confirm that I have authored this \thesistype{} independently and
+without the use of others sources than the ones indicated. I have not yet
+presented this thesis or parts thereof to a university as part of an
+examination or degree. This work was carried out in the $department$ at
+the $institute$ $instituteshort$ in the group of $supervisor$.
+\vspace{1cm}
+
+Heidelberg, \thesisdate{}
+\vspace{3cm}
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+\vspace{0.1cm}
+
+\thesisauthor{}
+\newpage
+\vspace*{\fill}
+$author$, \textit{$title$}, \textcopyright\,\thesisdate{}
+\newpage
+
+% --------------------------------------------
+% --------------- Dedication -----------------
+% --------------------------------------------
+$if(dedication)$
+\null
+\vspace{5cm}
+\begin{center}
+\textit{$dedication$}
+\end{center}
+\newpage\null\thispagestyle{empty}\newpage
+$endif$
+
+% ------------------------------------
+% --- frontmatter: Acknowledgement ---
+% ------------------------------------
+
+$if(acknowledge)$
+\newpage
+$acknowledge$
+$endif$
+\pagestyle{plain}
+\pagenumbering{roman}   % define page number in roman style
+\setcounter{page}{1}    % start page numbering
+\newpage\null\thispagestyle{empty}\newpage
+
+% --------------------------------------------
+% ---------- List of publications ------------
+% --------------------------------------------
+
+$if(list-of-publications)$
+$list-of-publications$
+\newpage\null\thispagestyle{empty}\newpage
+$endif$
+
+% -------------------------------------
+% --- frontmatter: Zusammendfassung ---
+% -------------------------------------
+
+$zusammenfassung$
+\newpage\null\thispagestyle{empty}\newpage
+
+% -----------------------------
+% --- frontmatter: Abstract ---
+% -----------------------------
+
+$abstract$
+\newpage\null\thispagestyle{empty}\newpage
+
+% -----------------------------
+% --- frontmatter: Contents ---
+% -----------------------------
+\newpage
+\tableofcontents
+\clearpage
+
+% ----------------------------------------------------------
+% --- frontmatter: List of Abbreviations (not mandatory) ---
+% ----------------------------------------------------------
+$if(abbreviations)$
+\newpage
+$abbreviations$
+$endif$
+
+% ----------------------------------------------------
+% --- frontmatter: List of Figures (not mandatory) ---
+% ----------------------------------------------------
+$if(lof)$
+\newpage
+\listoffigures
+\addcontentsline{toc}{section}{List of Figures}
+$endif$
+
+% ---------------------------------------------------
+% --- frontmatter: List of Tables (not mandatory) ---
+% ---------------------------------------------------
+$if(lot)$
+\newpage
+\listoftables
+\addcontentsline{toc}{section}{List of Tables}
+$endif$
+
+% -------------------------------
+% --- main body of the thesis ---
+% -------------------------------
+\newpage
+\pagestyle{plain}
+\setcounter{page}{1}    % start page numbering anew
+\pagenumbering{arabic}  % page numbers in arabic style
+
+$body$
+
+\end{document}
