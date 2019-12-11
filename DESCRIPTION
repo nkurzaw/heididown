@@ -6,7 +6,7 @@ Maintainer: Nils Kurzawa <nils.kurzawa@embl.de>
 Description: rmarkdown thesis template for students at the faculty of biosciences
     at Heidelberg University using the `bookdown` package.
 Depends: 
-    R (>= 3.5.1),
+    R (>= 3.6),
     devtools,
     dplyr,
     ggplot2,
