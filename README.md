@@ -43,7 +43,7 @@ example of the output can be seen [here](thesis-example.pdf).
 1. To install the template, be sure you have the following:
     - [pandoc](http://pandoc.org/)
     - [LaTeX](https://www.latex-project.org/get/)
-    - [R >= 3.5.1](https://r-project.org)
+    - [R >= 3.6](https://r-project.org)
     - [RStudio](https://rstudio.org) (optional, but it helps)
 2. Install the necessary packages:
 
