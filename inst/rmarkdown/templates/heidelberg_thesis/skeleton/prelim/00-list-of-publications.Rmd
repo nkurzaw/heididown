@@ -1,6 +1,6 @@
-## List of publications {-}
+# List of publications {-}
 
-### Thesis related {-}
+#### Thesis related {-}
 
 \begin{itemize}
     \item Einstein et al. 1918
@@ -8,12 +8,12 @@
 \end{itemize}
 
 
-### Other contributions {-}
+#### Other contributions {-}
 
 \begin{itemize}
     \item Newton et al. 1687
     \item ...
 \end{itemize}
 
-### Manuscripts in preparation / under review {-}
+#### Manuscripts in preparation / under review {-}
 
