@@ -71,6 +71,28 @@ following code:
 rmarkdown::draft("index.Rmd", template = "heidelberg_thesis", package = "heididown")
 ```
 
+4. Choose a document style you prefer 
+
+The package comes with multiple options to render documents:
+- create a book-like pdf appearance with chapters (default, which I personally prefer for dissertations),
+    - this is done usind the function `heididown::thesis_pdf`(default)
+    - to adapt the underlying template, you have to modify the `template.tex` file
+- create a pdf with sections as highest level organization
+    -  this is done usind the function `heididown::thesis_without_chapter_pdf` which you specify in the `index.Rmd` file (see image below) 
+    - to adapt the underlying template, you have to modify the `template_wo_chap.tex` file
+- create a pdf with sections as a template for a master of bachelor thesis at the Institute of Pharmacy and Molecular Biotechnology
+    - this is done usind the function `heididown::thesis_without_chapter_ipmb_pdf` which you need to specify in the `index.Rmd` file (see image below)
+    - to adapt the underlying template, you have to modify the `template_wo_chap_ipmb.tex` file
+
+
+<p align="center">
+  <img src="change_rendering_function.png" width="400px">
+</p>
+
+All options come with no warranty that the output style is in accordance with what the 
+faculty you are submitting your thesis to will accept!! Carefully check if all formal requirements are fullfilled! 
+If you need to adjust things, you can always edit the latex template files underlying the different functions.
+
 ### Rendering
 
 To render your thesis, you can open `index.Rmd` in RStudio and then hit the
