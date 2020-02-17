@@ -81,11 +81,11 @@ everything below this.
 
 # About this Thesis Template {-}
 
-Welcome to the thesis template. This template is based on the famous two mandatory  
-pages the Faculty of Biosciences at Heidelberg University requires for dissertations.
-It was adapted from [ismayc/thesisdown](https://github.com/ismayc/thesisdown) that 
-in turn is based on 
-[phister/huwiwidown](https://github.com/phister/huwiwidown)
+Welcome to the Heidelberg biosciences thesis template. This template is based on the famous two mandatory  
+pages that the Faculty of Biosciences at Heidelberg University requires for dissertations.
+It was adapted from [phister/huwiwidown](https://github.com/phister/huwiwidown) that 
+in turn is based on [ismayc/thesisdown](https://github.com/ismayc/thesisdown).
+
 
 ## Why use R Markdown? {-}
 
