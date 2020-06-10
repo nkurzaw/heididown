@@ -18,9 +18,11 @@
 
   * item time series plots, histogram.
 
-* For example:
+* For example (you can decide whether you want to display the code below or 
+not by setting `echo=TRUE` or `echo=FALSE`, respectively, in the code 
+chunk header):
 
-```{r table1, echo=FALSE}
+```{r table1, echo=TRUE}
 col_names <- c(
   "3m", "6m", "1yr", "2yr", "3yr", "5yr", "7yr", "10yr", "12yr", "15yr"
 )
