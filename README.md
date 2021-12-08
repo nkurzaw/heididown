@@ -75,8 +75,8 @@ rmarkdown::draft("index.Rmd", template = "heidelberg_thesis", package = "heidido
 
 The package comes with multiple options to render documents:
 - create a book-like pdf appearance with chapters (default, which I personally prefer for dissertations),
-    - this is done usind the function `heididown::thesis_pdf`(default)
-    - to adapt the underlying template, you have to modify the `template.tex` file
+    - this is done using the function `heididown::thesis_2021_pdf`(default) (previously this was `heididown::thesis_pdf`, but the format requirements were updated in December 2021)
+    - to adapt the underlying template, you have to modify the `template_2021.tex` file
 - create a pdf with sections as highest level organization
     -  this is done usind the function `heididown::thesis_without_chapter_pdf` which you specify in the `index.Rmd` file (see image below) 
     - to adapt the underlying template, you have to modify the `template_wo_chap.tex` file
