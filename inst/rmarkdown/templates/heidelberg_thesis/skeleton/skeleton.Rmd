@@ -39,7 +39,7 @@ bibliography: bib/references.bib       # bibliography file
 #
 knit: "bookdown::render_book"
 output: 
-  heididown::thesis_pdf  
+  heididown::thesis_2021_pdf  
 space_between_paragraphs: true       # if you want spaces bt paragraph
 # header-includes:     # if including additional latex packages or commands
   # - \setlength{\parindent}{17pt}
