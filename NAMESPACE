@@ -2,5 +2,6 @@
 
 export(thesis_2021_pdf)
 export(thesis_pdf)
+export(thesis_without_chapter_2021_pdf)
 export(thesis_without_chapter_ipmb_pdf)
 export(thesis_without_chapter_pdf)
