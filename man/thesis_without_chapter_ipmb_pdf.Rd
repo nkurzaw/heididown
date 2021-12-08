@@ -5,8 +5,12 @@
 \title{Creates an R Markdown PDF Thesis document without chapters for submission
 of a bachelor/master thesis to IPMB}
 \usage{
-thesis_without_chapter_ipmb_pdf(toc = TRUE, toc_depth = 3,
-  highlight = "default", ...)
+thesis_without_chapter_ipmb_pdf(
+  toc = TRUE,
+  toc_depth = 3,
+  highlight = "default",
+  ...
+)
 }
 \arguments{
 \item{toc}{A Boolean (TRUE or FALSE) specifying whether table of contents

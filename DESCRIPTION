@@ -19,4 +19,4 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 SystemRequirements: pandoc (>= 1.18) - http://pandoc.org
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
