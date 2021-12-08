@@ -33,7 +33,7 @@ pages, in the event he/she still wants to write in LaTeX.
 
 This thesis will contain minor differences to the due to limitations in the
 pandoc output, but in general the appearance is almost entirely identical. An
-example of the output can be seen [here](thesis-example.pdf).
+example of the output can be seen [here](thesis-2021-example.pdf).
 
 ## Usage
 
