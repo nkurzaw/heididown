@@ -77,8 +77,8 @@ The package comes with multiple options to render documents:
     - this is done using the function `heididown::thesis_2021_pdf`(default) (previously this was `heididown::thesis_pdf`, but the format requirements were updated in December 2021)
     - to adapt the underlying template, you have to modify the `template_2021.tex` file
 - create a pdf with sections as highest level organization
-    -  this is done usind the function `heididown::thesis_without_chapter_pdf` which you specify in the `index.Rmd` file (see image below) 
-    - to adapt the underlying template, you have to modify the `template_wo_chap.tex` file
+    -  this is done usind the function `heididown::thesis_without_chapter_2021_pdf` (previously this was `heididown::thesis_without_chapter_pdf`) which you specify in the `index.Rmd` file (see image below) 
+    - to adapt the underlying template, you have to modify the `template_wo_chap_2021.tex` file
 - create a pdf with sections as a template for a master of bachelor thesis at the Institute of Pharmacy and Molecular Biotechnology
     - this is done usind the function `heididown::thesis_without_chapter_ipmb_pdf` which you need to specify in the `index.Rmd` file (see image below)
     - to adapt the underlying template, you have to modify the `template_wo_chap_ipmb.tex` file
