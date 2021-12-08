@@ -1,5 +1,4 @@
 # heididown 
-[![Build Status](https://travis-ci.org/nkurzaw/heididown.svg?branch=master)](https://travis-ci.org/nkurzaw/heididown)
 
 The `heididown` package provides a handy template for writing a dissertation 
 at the Faculty of Biosciences at Heidelberg University and rendering
